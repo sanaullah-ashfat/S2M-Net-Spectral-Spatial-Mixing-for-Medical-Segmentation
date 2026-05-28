@@ -1,0 +1,22 @@
+# Polyp / Skin Lesion Segmentation (Kvasir-SEG, PH2)
+
+data:
+  train_dir: "data/Kvasir-SEG/train"
+  val_dir:   "data/Kvasir-SEG/val"
+  test_dir:  "data/Kvasir-SEG/test"
+  num_classes: 1
+
+model:
+  input_size: 352
+
+training:
+  batch_size:    8
+  epochs:        100
+  learning_rate: 1.0e-4
+
+dataloader:
+  mode:            "full_image"
+  expansion_factor: 30
+
+output:
+  save_dir: "runs/polyp"

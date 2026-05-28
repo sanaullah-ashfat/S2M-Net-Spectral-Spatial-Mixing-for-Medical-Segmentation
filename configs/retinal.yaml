@@ -1,0 +1,29 @@
+# Retinal Vessel Segmentation (CHASE-DB / DRIVE)
+# Inherits from default.yaml — only overrides are shown.
+
+data:
+  train_dir: "data/CHASE-DB/train"
+  val_dir:   "data/CHASE-DB/val"
+  test_dir:  "data/CHASE-DB/test"
+  num_classes: 1
+
+model:
+  input_size: 256
+
+training:
+  batch_size:    16
+  epochs:        100
+  learning_rate: 5.0e-4
+
+dataloader:
+  mode:              "patch"
+  patch_size:        256
+  patch_stride:      32
+  min_fg_ratio:      0.005
+  patches_per_epoch: 4000
+  use_clahe:         true
+  use_fov_mask:      true
+  fov_margin:        20
+
+output:
+  save_dir: "runs/retinal"

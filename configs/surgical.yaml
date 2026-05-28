@@ -1,0 +1,28 @@
+# Surgical Instrument Segmentation (EndoVis-17)
+
+data:
+  train_dir: "data/EndoVis17/train"
+  val_dir:   "data/EndoVis17/val"
+  test_dir:  "data/EndoVis17/test"
+  num_classes: 6                  # 0=background, 1-5=instrument parts
+
+model:
+  input_size: 512
+  filters:    [24, 32, 64, 80, 128]
+
+training:
+  batch_size:    2
+  epochs:        30
+  learning_rate: 1.0e-4
+
+dataloader:
+  mode:            "full_image"
+  expansion_factor: 30
+
+loss:
+  components: ["core", "boundary"]   # simplified for multi-class
+  learned_weights:       true
+  morphology_modulation: false
+
+output:
+  save_dir: "runs/surgical"

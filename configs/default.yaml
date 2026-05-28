@@ -1,0 +1,78 @@
+# S2M-Net Default Configuration
+# Override any value from the CLI: python train.py --config configs/default.yaml key=value
+
+data:
+  train_dir: "data/train"
+  val_dir:   "data/val"
+  test_dir:  "data/test"
+  num_classes: 1               # 1 = binary, N = multi-class
+
+model:
+  input_size:    352
+  filters:       [24, 32, 64, 80, 128]
+  # MRF-SE
+  use_mrfse:     true
+  mrfse_kernels: [3, 5, 7]
+  se_reduction:  16
+  expand_ratio:  6
+  # SSTM
+  use_sstm:      true
+  sstm_k:        32
+  sstm_ssm_dim:  16
+  sstm_stages:   [true, true, true, true, true]
+  sstm_use_spectral: [true, true, true, true, true]
+  sstm_use_ssm:      [false, false, true, true, true]
+  sstm_dropout:  0.1
+  # BFP Decoder
+  use_bfp:       true
+  bfp_routing:   "soft"          # soft | hard | learned | none
+  # General
+  dropout:       0.1
+  l2_reg:        1.0e-4
+  activation:    "elu"
+
+loss:
+  components: ["core", "boundary", "structure", "scale", "texture"]
+  learned_weights:       true
+  morphology_modulation: true
+  # Morphology modulation coefficients (paper defaults)
+  coefficients:
+    core:      0.5
+    boundary:  1.5
+    structure: 1.0
+    scale:     1.5
+    texture:   1.0
+
+training:
+  batch_size:    8
+  epochs:        100
+  learning_rate: 1.0e-4
+  lr_schedule:   "cosine_warmup"  # cosine_warmup | reduce_on_plateau | constant
+  warmup_epochs: 10
+  min_lr:        1.0e-6
+  early_stopping_patience: 40
+  monitor:       "val_dice_coefficient"
+  monitor_mode:  "max"
+  seed:          42
+
+dataloader:
+  # Patch-based settings (set mode: "patch" for retinal datasets)
+  mode:              "full_image"   # full_image | patch
+  patch_size:        256
+  patch_stride:      32
+  min_fg_ratio:      0.005
+  patches_per_epoch: 4000
+  expansion_factor:  30
+  use_clahe:         false
+  use_fov_mask:      false
+  fov_margin:        20
+
+evaluation:
+  use_tta:        true
+  tta_n:          8               # number of TTA augmentations
+  threshold:      0.5
+
+output:
+  save_dir:           "runs/default"
+  save_predictions:   true
+  save_overlays:      true
