@@ -7,7 +7,8 @@
 <p align="center">
   <strong>Sanaullah Chowdhury</strong> · <strong>Lameya Sabrin</strong><br/>
   Independent Researchers, Dhaka, Bangladesh<br/>
-  <a href="mailto:sanaullahashfat@gmail.com">sanaullahashfat@gmail.com</a>
+  <a href="mailto:sanaullahashfat@gmail.com">sanaullahashfat@gmail.com</a><br/>
+  <a href="mailto:slameya.work@gmail.com">slameya.work@gmail.com</a>
 </p>
 
 ---
