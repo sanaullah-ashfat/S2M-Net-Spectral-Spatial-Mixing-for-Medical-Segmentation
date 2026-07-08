@@ -737,27 +737,25 @@ from s2mnet.utils.metrics import dice_coefficient, iou_score, precision_metric, 
 | 22 | SIMPLE_DICE | Full architecture + simple Dice loss only |
 
 ---
+## Citation
 
+If you find this repository useful, please cite our paper:
+
+```bibtex
+@inproceedings{chowdhury2026s2mnet,
+  title     = {{S2M-Net}: Spectral-Spatial Mixing with Morphology-Aware Adaptive Loss for Medical Image Segmentation},
+  author    = {Chowdhury, Sanaullah and Sabrin, Lameya},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=eh48NIgu9z}
+}
 ---
 
 ## License
 
 MIT License
 
----
 
-## Citetation 
-
-
-@inproceedings{
-chowdhury2026smnet,
-title={S2M-Net: Spectral-Spatial Mixing with Morphology-Aware Adaptive Loss for Medical Image Segmentation},
-author={Sanaullah Chowdhury and Lameya Sabrin},
-booktitle={Forty-third International Conference on Machine Learning},
-year={2026},
-url={https://openreview.net/forum?id=eh48NIgu9z}
-}
----
 
 
 ## Acknowledgements
