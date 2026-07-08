@@ -741,7 +741,7 @@ from s2mnet.utils.metrics import dice_coefficient, iou_score, precision_metric, 
 
 If you find this repository useful, please cite our paper:
 
-bibtex
+```bibtex
 @inproceedings{chowdhury2026s2mnet,
   title     = {{S2M-Net}: Spectral-Spatial Mixing with Morphology-Aware Adaptive Loss for Medical Image Segmentation},
   author    = {Chowdhury, Sanaullah and Sabrin, Lameya},
@@ -749,6 +749,7 @@ bibtex
   year      = {2026},
   url       = {https://openreview.net/forum?id=eh48NIgu9z}
 }
+```
 
 ## License
 
