@@ -746,6 +746,20 @@ MIT License
 
 ---
 
+## Citetation 
+
+
+@inproceedings{
+chowdhury2026smnet,
+title={S2M-Net: Spectral-Spatial Mixing with Morphology-Aware Adaptive Loss for Medical Image Segmentation},
+author={Sanaullah Chowdhury and Lameya Sabrin},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=eh48NIgu9z}
+}
+---
+
+
 ## Acknowledgements
 
 The authors thank the anonymous reviewers whose detailed feedback substantially improved this work, and the open-source medical imaging community for releasing the 15 benchmark datasets used in this evaluation.
